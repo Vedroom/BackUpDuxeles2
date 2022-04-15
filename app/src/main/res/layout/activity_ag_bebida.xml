@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00000000"
+    android:background="#000000"
     tools:context=".ag_bebida">
 
     <Button
@@ -25,10 +25,11 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
+        android:background="#FFEB3B"
+        android:src="@drawable/regresar"
         android:tint="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/regresar" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageButton
         android:id="@+id/btnInicio"
@@ -37,6 +38,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
+        android:background="#FFEB3B"
+        android:tint="#00000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnRegresar"
         app:srcCompat="@drawable/inicio" />
@@ -44,7 +47,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="342dp"
-        android:layout_height="436dp"
+        android:layout_height="500dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="32dp"
@@ -56,22 +59,19 @@
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnHome"
-        app:layout_constraintVertical_bias="0.493"
-        tools:srcCompat="@color/colorPrimary" />
+        app:layout_constraintVertical_bias="0.898"
+        app:srcCompat="@android:color/background_light" />
 
     <EditText
         android:id="@+id/txtNomBebida"
-        android:layout_width="309dp"
+        android:layout_width="120dp"
         android:layout_height="46dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="36dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/txtNomBebida"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
@@ -81,11 +81,11 @@
         android:layout_height="43dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="24dp"
         android:clickable="false"
         android:text="@string/tCantidad"
         app:layout_constraintEnd_toStartOf="@+id/txtCantBebida"
-        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintHorizontal_bias="0.166"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/txtDesBebida" />
 
@@ -108,11 +108,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="12dp"
+        android:background="#FFEB3B"
         android:text="@string/btnCancelar"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toStartOf="@+id/btnContinuar"
-        app:layout_constraintHorizontal_bias="0.023"
+        app:layout_constraintHorizontal_bias="0.063"
         app:layout_constraintStart_toStartOf="@+id/imageView" />
 
     <Button
@@ -121,7 +122,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="12dp"
+        android:background="#FFEB3B"
         android:onClick="Register"
         android:text="@string/btnContinuar"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
@@ -131,21 +133,20 @@
         android:id="@+id/txtDesBebida"
         android:layout_width="307dp"
         android:layout_height="71dp"
-        android:layout_marginTop="36dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:text="@string/txtDesBebida"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/txtNomBebida" />
+        tools:layout_editor_absoluteY="324dp" />
 
     <EditText
         android:id="@+id/txtCantBebida"
         android:layout_width="170dp"
         android:layout_height="43dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
@@ -166,5 +167,21 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/txtCantBebida"
         tools:text="@string/txtPreBebida" />
+
+    <ImageView
+        android:id="@+id/imgBebida"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:srcCompat="@android:color/transparent"
+        tools:layout_editor_absoluteX="202dp"
+        tools:layout_editor_absoluteY="158dp" />
+
+    <Button
+        android:id="@+id/btnCargarImgB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="229dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

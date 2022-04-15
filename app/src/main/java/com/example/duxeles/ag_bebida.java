@@ -24,7 +24,7 @@ public class ag_bebida extends AppCompatActivity {
     }
     //METODO ALTA DE BEBIDAS
    public void Register(View view){
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(ag_bebida.this,"duxeles", null, 1);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(ag_bebida.this);
        SQLiteDatabase Base = admin.getWritableDatabase();
        String nombreB = NomBebida.getText().toString();
        String descripcionB = DesBebida.getText().toString();
