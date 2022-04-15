@@ -2,13 +2,14 @@
     <string name="app_name">Duxeles</string>
 <!--- Pantalla ag_bebida-->
     <string name="btnHome">Home</string>
-    <string name="txtNomBebida">Nombre de bebida</string>
+    <string name="txtNomBebida">Nombre bebida</string>
     <string name="txtDesBebida">Descripción</string>
     <string name="tCantidad">Cantidad:</string>
     <string name="txtCantBebida">Ingrese Cantidad</string>
     <string name="tPrecio">Precio:</string>
     <string name="txtPreBebida">Ingrese Precio</string>
     <string name="btnCancelar">Cancelar</string>
-    <string name="btnContinuar">Continuar</string>
+    <string name="btnContinuar">Agregar</string>
+    <string name="btnCargarImg">Buscar Img</string>
 
 </resources>
