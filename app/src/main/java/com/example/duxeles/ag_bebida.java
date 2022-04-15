@@ -15,11 +15,13 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.io.ByteArrayOutputStream;
+
 public class ag_bebida extends AppCompatActivity {
 
     private EditText NomBebida, DesBebida, CantBebida, PreBebida;
     ImageView imagen;
-
+    //byte[] img;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +46,6 @@ public class ag_bebida extends AppCompatActivity {
         if(resultCode == RESULT_OK){
             Uri path = data.getData();
             imagen.setImageURI(path);
-            Bitmap bitmap = imagen.getDrawingCache();
         }
     }
 
@@ -56,13 +57,21 @@ public class ag_bebida extends AppCompatActivity {
        String descripcionB = DesBebida.getText().toString();
        String cantidadB = CantBebida.getText().toString();
        String precioB = PreBebida.getText().toString();
+
+       //GUARDAR IMG
+       Bitmap bitmap = imagen.getDrawingCache();
+       ByteArrayOutputStream baos = new ByteArrayOutputStream(20480);
+       //bitmap.compress(Bitmap.CompressFormat.PNG, 0 , baos);
+       bitmap.compress(Bitmap.CompressFormat.JPEG, 0,baos);
+       byte[] img = baos.toByteArray();
+        //--------------------------
        if(!nombreB.isEmpty() && !descripcionB.isEmpty() && !cantidadB.isEmpty() && !cantidadB.isEmpty()){
 
            ContentValues registro = new ContentValues();
            registro.put("nombreB", nombreB);
            registro.put("cantidadB",cantidadB);
            registro.put("precioB",precioB);
-           registro.put("descripcionB", descripcionB);
+           registro.put("img", img);
 
            Base.insert("bebidas",null, registro);
            Base.close();
@@ -71,6 +80,7 @@ public class ag_bebida extends AppCompatActivity {
            DesBebida.setText("");
            CantBebida.setText("");
            PreBebida.setText("");
+           imagen.setImageResource(0);
 
            Toast.makeText(ag_bebida.this,"Registro exitoso", Toast.LENGTH_LONG).show();
        }else{

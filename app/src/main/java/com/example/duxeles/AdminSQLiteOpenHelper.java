@@ -21,7 +21,8 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
                 "nombreB TEXT not null," +
                 "cantidadB INT not null," +
                 "precioB DOUBLE not null," +
-                "descripcionB TEXT not null/*, img BLOB*/)");
+                "descripcionB TEXT not null," +
+                "img BLOB)");
     }
 
     @Override
