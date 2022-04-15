@@ -184,9 +184,12 @@
         android:id="@+id/imgBebida"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        app:srcCompat="@android:color/transparent"
-        tools:layout_editor_absoluteX="202dp"
-        tools:layout_editor_absoluteY="158dp" />
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:srcCompat="@android:color/transparent" />
 
     <Button
         android:id="@+id/btnCargarImgB"
@@ -195,6 +198,7 @@
         android:layout_marginTop="48dp"
         android:layout_marginEnd="28dp"
         android:layout_marginRight="28dp"
+        android:onClick="cargarimg"
         android:text="@string/btnCargarImg"
         app:layout_constraintEnd_toStartOf="@+id/imgBebida"
         app:layout_constraintTop_toBottomOf="@+id/txtNomBebida" />

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -27,21 +28,23 @@ public class ag_bebida extends AppCompatActivity {
         DesBebida = (EditText)findViewById(R.id.txtDesBebida);
         CantBebida = (EditText)findViewById(R.id.txtCantBebida);
         PreBebida = (EditText)findViewById(R.id.txtPreBebida);
+        imagen = (ImageView) findViewById(R.id.imgBebida);
     }
 
     //METODO CARGAR IMG
-    public void cargarimg(){
+    public void cargarimg(View view){
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        intent.setType("Imagen/");
+        intent.setType("image/");
         startActivityForResult(intent.createChooser(intent,"Seleccione la Aplicacion"),10);
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(resultCode == RESULT_OK){
             Uri path = data.getData();
             imagen.setImageURI(path);
+            Bitmap bitmap = imagen.getDrawingCache();
         }
     }
 
