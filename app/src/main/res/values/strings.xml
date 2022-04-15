@@ -1,4 +1,5 @@
 <resources>
+    <string name="app_name">Duxeles</string>
 <!--- Pantalla ag_bebida-->
     <string name="btnHome">Home</string>
     <string name="txtNomBebida">Nombre de bebida</string>

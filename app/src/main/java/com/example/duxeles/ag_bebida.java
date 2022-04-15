@@ -24,7 +24,7 @@ public class ag_bebida extends AppCompatActivity {
     }
     //METODO ALTA DE BEBIDAS
    public void Register(View view){
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"duxeles", null, 1);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(ag_bebida.this,"duxeles", null, 1);
        SQLiteDatabase Base = admin.getWritableDatabase();
        String nombreB = NomBebida.getText().toString();
        String descripcionB = DesBebida.getText().toString();
@@ -45,8 +45,11 @@ public class ag_bebida extends AppCompatActivity {
            DesBebida.setText("");
            CantBebida.setText("");
            PreBebida.setText("");
+
+           Toast.makeText(ag_bebida.this,"Registro exitoso", Toast.LENGTH_LONG).show();
        }else{
-           Toast.makeText(this,"Completar todos los campos", Toast.LENGTH_LONG);
+           Toast.makeText(ag_bebida.this,"Completar todos los campos", Toast.LENGTH_LONG).show();
        }
    }
+
 }
