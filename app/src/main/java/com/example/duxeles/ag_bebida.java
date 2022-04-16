@@ -7,6 +7,7 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -59,10 +60,11 @@ public class ag_bebida extends AppCompatActivity {
        String precioB = PreBebida.getText().toString();
 
        //GUARDAR IMG
-       Bitmap bitmap = imagen.getDrawingCache();
+       Bitmap bitmap = ((BitmapDrawable)this.imagen.getDrawable()).getBitmap();
+       Bitmap imagenScaled = Bitmap.createScaledBitmap(bitmap,960,960,false);
        ByteArrayOutputStream baos = new ByteArrayOutputStream(20480);
        //bitmap.compress(Bitmap.CompressFormat.PNG, 0 , baos);
-       bitmap.compress(Bitmap.CompressFormat.JPEG, 0,baos);
+       imagenScaled.compress(Bitmap.CompressFormat.JPEG, 90,baos);
        byte[] img = baos.toByteArray();
         //--------------------------
        if(!nombreB.isEmpty() && !descripcionB.isEmpty() && !cantidadB.isEmpty() && !cantidadB.isEmpty()){
@@ -71,9 +73,10 @@ public class ag_bebida extends AppCompatActivity {
            registro.put("nombreB", nombreB);
            registro.put("cantidadB",cantidadB);
            registro.put("precioB",precioB);
+           registro.put("descripcionB",descripcionB);
            registro.put("img", img);
 
-           Base.insert("bebidas",null, registro);
+           Base.insert("bebidas","id_bebida", registro);
            Base.close();
 
            NomBebida.setText("");
