@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">Duxeles</string>
-<!--- Pantalla ag_bebida-->
+
+    <!--- Pantalla bebida-->
+    <string name="btnAgregarB">Agregar</string>
+    <string name="btnModB">Modificar</string>
+    <string name="btnElimB">Modificar</string>
+    <!--- Pantalla ag_bebida-->
     <string name="btnHome">Home</string>
     <string name="txtNomBebida">Nombre bebida</string>
     <string name="txtDesBebida">Descripción</string>
@@ -11,5 +16,8 @@
     <string name="btnCancelar">Cancelar</string>
     <string name="btnContinuar">Agregar</string>
     <string name="btnCargarImg">Buscar Img</string>
+    <string name="btnRegresar">Regresar</string>
+    <string name="btnInicio">Inicio</string>
+    <string name="imgBebida">Imagen Bebida</string>
 
 </resources>

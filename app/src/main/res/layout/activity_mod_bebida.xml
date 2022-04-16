@@ -5,7 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
-    tools:context=".ag_bebida">
+    tools:context=".mod_bebida">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="342dp"
+        android:layout_height="500dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnInicio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnHome"
+        app:layout_constraintVertical_bias="0.898"
+        app:srcCompat="@android:color/background_light" />
 
     <Button
         android:id="@+id/btnHome"
@@ -48,22 +66,15 @@
         app:srcCompat="@drawable/inicio" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="342dp"
-        android:layout_height="500dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnInicio"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnHome"
-        app:layout_constraintVertical_bias="0.898"
-        app:srcCompat="@android:color/background_light" />
+        android:id="@+id/imgBebida"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:srcCompat="?attr/selectableItemBackground" />
 
     <EditText
         android:id="@+id/txtNomBebida"
@@ -73,127 +84,11 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="36dp"
         android:ems="10"
-        android:gravity="center"
         android:hint="@string/txtNomBebida"
         android:inputType="textPersonName"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
-
-    <TextView
-        android:id="@+id/tCantidad"
-        android:layout_width="116dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="24dp"
-        android:clickable="false"
-        android:gravity="center|end"
-        android:text="@string/tCantidad"
-        android:textColor="#000000"
-        android:textColorHint="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/txtCantBebida"
-        app:layout_constraintHorizontal_bias="0.166"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/txtDesBebida" />
-
-    <TextView
-        android:id="@+id/tPrecio"
-        android:layout_width="116dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="24dp"
-        android:gravity="center|end"
-        android:scrollbarSize="4dp"
-        android:text="@string/tPrecio"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/txtPreBebida"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/tCantidad" />
-
-    <Button
-        android:id="@+id/btnCancelar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginBottom="12dp"
-        android:background="#FFEB3B"
-        android:text="@string/btnCancelar"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toStartOf="@+id/btnContinuar"
-        app:layout_constraintHorizontal_bias="0.063"
-        app:layout_constraintStart_toStartOf="@+id/imageView" />
-
-    <Button
-        android:id="@+id/btnContinuar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="12dp"
-        android:background="#FFEB3B"
-        android:onClick="Register"
-        android:text="@string/btnContinuar"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView" />
-
-    <EditText
-        android:id="@+id/txtDesBebida"
-        android:layout_width="307dp"
-        android:layout_height="71dp"
-        android:layout_marginTop="20dp"
-        android:autoText="false"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="@string/txtDesBebida"
-        android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.571"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/imgBebida" />
-
-    <EditText
-        android:id="@+id/txtCantBebida"
-        android:layout_width="170dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:ems="10"
-        android:hint="@string/txtCantBebida"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/txtDesBebida" />
-
-    <EditText
-        android:id="@+id/txtPreBebida"
-        android:layout_width="170dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:ems="10"
-        android:hint="@string/txtPreBebida"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/txtCantBebida" />
-
-    <ImageView
-        android:id="@+id/imgBebida"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:contentDescription="@string/imgBebida"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:srcCompat="@android:color/transparent" />
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/imageView3" />
 
     <Button
         android:id="@+id/btnCargarImgB"
@@ -207,4 +102,98 @@
         app:layout_constraintEnd_toStartOf="@+id/imgBebida"
         app:layout_constraintTop_toBottomOf="@+id/txtNomBebida" />
 
+    <EditText
+        android:id="@+id/txtDesBebida"
+        android:layout_width="307dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/txtDesBebida"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintHorizontal_bias="0.57"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/imgBebida" />
+
+    <TextView
+        android:id="@+id/tCanidad"
+        android:layout_width="116dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center|end"
+        android:text="@string/tCantidad"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/txtDesBebida" />
+
+    <TextView
+        android:id="@+id/tPrecio"
+        android:layout_width="116dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center|end"
+        android:text="@string/tPrecio"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/tCanidad" />
+
+    <Button
+        android:id="@+id/btnCancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="12dp"
+        android:background="#FFEB3B"
+        android:text="@string/btnCancelar"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintEnd_toStartOf="@+id/btnContinuar"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="@+id/imageView3" />
+
+    <Button
+        android:id="@+id/btnContinuar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="12dp"
+        android:background="#FFEB3B"
+        android:onClick="actualizar"
+        android:text="@string/btnContinuar"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3" />
+
+    <EditText
+        android:id="@+id/txtPreBebida"
+        android:layout_width="170dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:ems="10"
+        android:hint="@string/txtPreBebida"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/txtCantBebida" />
+
+    <EditText
+        android:id="@+id/txtCantBebida"
+        android:layout_width="170dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:ems="10"
+        android:hint="@string/txtCantBebida"
+        android:inputType="numberSigned"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/txtDesBebida" />
 </androidx.constraintlayout.widget.ConstraintLayout>

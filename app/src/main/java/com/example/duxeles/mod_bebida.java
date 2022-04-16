@@ -1,6 +1,5 @@
 package com.example.duxeles;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
@@ -18,37 +17,44 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 
-public class ag_bebida extends AppCompatActivity {
-
+public class mod_bebida extends AppCompatActivity {
+    //VARIABLES PARA MODIFICAR
+    //String idb = getIntent().getStringExtra("id");
+    String[] id = {"1"};
     private EditText NomBebida, DesBebida, CantBebida, PreBebida;
     ImageView imagen;
-
-    //------------------------------------------
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ag_bebida);
+        setContentView(R.layout.activity_mod_bebida);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(mod_bebida.this);
+        SQLiteDatabase Base = admin.getWritableDatabase();
+
+
         NomBebida = (EditText) findViewById(R.id.txtNomBebida);
         DesBebida = (EditText) findViewById(R.id.txtDesBebida);
         CantBebida = (EditText) findViewById(R.id.txtCantBebida);
         PreBebida = (EditText) findViewById(R.id.txtPreBebida);
         imagen = (ImageView) findViewById(R.id.imgBebida);
-
-        //INICIALIZAR EN BLANCO
-        NomBebida.setText("");
-        DesBebida.setText("");
-        CantBebida.setText("");
-        PreBebida.setText("");
-        imagen.setImageResource(0);
-        //----------------------------
+        try {
+            String[] campos = {"nombreB", "cantidadB", "precioB", "descripcionB", "img"};
+            Cursor cursor = Base.query("bebidas", campos, "id_bebida=?", id, null, null, null);
+            cursor.moveToFirst();
+            NomBebida.setText(cursor.getString(0));
+            CantBebida.setText(cursor.getString(1));
+            PreBebida.setText(cursor.getString(2));
+            DesBebida.setText(cursor.getString(3));
+            byte[] blob = cursor.getBlob(4);
+            imagen.setImageBitmap(BitmapFactory.decodeByteArray(blob, 0, blob.length));
+            cursor.close();
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "La bebida no existe", Toast.LENGTH_LONG).show();
+        }
     }
-
-    //METODO CARGAR IMG
+//METODO CARGAR IMG
     public void cargarimg(View view) {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         intent.setType("image/");
@@ -63,36 +69,35 @@ public class ag_bebida extends AppCompatActivity {
             imagen.setImageURI(path);
         }
     }
-    //-----------------------------
-//METODO ALTA DE BEBIDAS
-    public void Register(View view) {
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(ag_bebida.this);
+//-----------------------------
+//METODO ACTUALIZAR BEBIDAS
+    public void actualizar(View view) {
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(mod_bebida.this);
         SQLiteDatabase Base = admin.getWritableDatabase();
         String nombreB = NomBebida.getText().toString();
         String descripcionB = DesBebida.getText().toString();
         String cantidadB = CantBebida.getText().toString();
         String precioB = PreBebida.getText().toString();
 
-    //GUARDAR IMG
+        //GUARDAR IMG
         Bitmap bitmap = ((BitmapDrawable) this.imagen.getDrawable()).getBitmap();
         Bitmap imagenScaled = Bitmap.createScaledBitmap(bitmap, 960, 960, false);
         ByteArrayOutputStream baos = new ByteArrayOutputStream(20480);
         //bitmap.compress(Bitmap.CompressFormat.PNG, 0 , baos);
         imagenScaled.compress(Bitmap.CompressFormat.JPEG, 90, baos);
         byte[] img = baos.toByteArray();
-    //--------------------------
+        //--------------------------
         if (!nombreB.isEmpty() && !descripcionB.isEmpty() && !cantidadB.isEmpty() && !precioB.isEmpty()) {
-            ContentValues registro = new ContentValues();
-            registro.put("nombreB", nombreB);
-            registro.put("cantidadB", cantidadB);
-            registro.put("precioB", precioB);
-            registro.put("descripcionB", descripcionB);
-            registro.put("img", img);
-            Base.insert("bebidas", "id_bebida", registro);
-            Toast.makeText(ag_bebida.this, "Registro exitoso", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(ag_bebida.this, "Completar todos los campos", Toast.LENGTH_LONG).show();
-        }
+            try{
+                Base.execSQL("UPDATE " + "bebidas " + "SET nombreB='" + nombreB + "', cantidadB='" + cantidadB +
+                        "', precioB='" + precioB + "', descripcionB='" + descripcionB + "', img='" + img + "'WHERE id_bebida='" + id + "'");
+            }catch (Exception e){
+                Toast.makeText(mod_bebida.this, "Error al actualizar", Toast.LENGTH_LONG).show();
+            }
+            Toast.makeText(mod_bebida.this, "Acualizacion exitosa", Toast.LENGTH_LONG).show();
+    } else{
+        Toast.makeText(mod_bebida.this, "Completar todos los campos", Toast.LENGTH_LONG).show();
+    }
         Base.close();
         NomBebida.setText("");
         DesBebida.setText("");
@@ -100,8 +105,7 @@ public class ag_bebida extends AppCompatActivity {
         PreBebida.setText("");
         imagen.setImageResource(0);
     }
-//----------------------------------------
-//METODO REGRESAR PANTALLA ANTERIOR
+    //METODO REGRESAR PANTALLA ANTERIOR
     public void regresar(View view) {
         Intent i = new Intent(this, bebidas.class);
         startActivity(i);

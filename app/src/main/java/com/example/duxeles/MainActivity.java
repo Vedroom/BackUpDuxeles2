@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     }
     //BOTON PROVICIONAL
     public void Ag_Bebida (View view){
-        Intent i = new Intent(this, ag_bebida.class);
+        Intent i = new Intent(this, bebidas.class);
         startActivity(i);
     }
     //-------------------------
