@@ -1,4 +1,4 @@
-package com.example.duxeles;
+package com.example.duxeles.pbebidas;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,6 +17,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.duxeles.AdminSQLiteOpenHelper;
+import com.example.duxeles.R;
+
 import java.io.ByteArrayOutputStream;
 
 public class mod_bebida extends AppCompatActivity {
@@ -31,10 +34,10 @@ public class mod_bebida extends AppCompatActivity {
         //OBTENER ID PARA BUSQUEDA FORMATO ARRAY STRING
         String[] nid = {String.valueOf(getIntent().getIntExtra("id_modificar", 0))};
 
-        NomBebida = (EditText) findViewById(R.id.txtNomBebida);
+        NomBebida = (EditText) findViewById(R.id.txtNomIng);
         DesBebida = (EditText) findViewById(R.id.txtDesBebida);
-        CantBebida = (EditText) findViewById(R.id.txtCantBebida);
-        PreBebida = (EditText) findViewById(R.id.txtPreBebida);
+        CantBebida = (EditText) findViewById(R.id.txtCantIng);
+        PreBebida = (EditText) findViewById(R.id.txtPreIng);
         imagen = (ImageView) findViewById(R.id.imgBebida);
         try {
             String[] campos = {"nombreB", "cantidadB", "precioB", "descripcionB", "img"};

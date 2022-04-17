@@ -1,14 +1,11 @@
-package com.example.duxeles;
+package com.example.duxeles.pbebidas;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
 import android.content.Intent;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -18,7 +15,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import java.io.ByteArrayInputStream;
+import com.example.duxeles.AdminSQLiteOpenHelper;
+import com.example.duxeles.R;
+
 import java.io.ByteArrayOutputStream;
 
 public class ag_bebida extends AppCompatActivity {
@@ -27,16 +26,14 @@ public class ag_bebida extends AppCompatActivity {
     ImageView imagen;
 
     //------------------------------------------
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ag_bebida);
-        NomBebida = (EditText) findViewById(R.id.txtNomBebida);
+        NomBebida = (EditText) findViewById(R.id.txtNomIng);
         DesBebida = (EditText) findViewById(R.id.txtDesBebida);
-        CantBebida = (EditText) findViewById(R.id.txtCantBebida);
-        PreBebida = (EditText) findViewById(R.id.txtPreBebida);
+        CantBebida = (EditText) findViewById(R.id.txtCantIng);
+        PreBebida = (EditText) findViewById(R.id.txtPreIng);
         imagen = (ImageView) findViewById(R.id.imgBebida);
 
         //INICIALIZAR EN BLANCO
@@ -90,15 +87,15 @@ public class ag_bebida extends AppCompatActivity {
             registro.put("img", img);
             Base.insert("bebidas", "id_bebida", registro);
             Toast.makeText(ag_bebida.this, "Registro exitoso", Toast.LENGTH_LONG).show();
+            Base.close();
+            NomBebida.setText("");
+            DesBebida.setText("");
+            CantBebida.setText("");
+            PreBebida.setText("");
+            imagen.setImageResource(0);
         } else {
             Toast.makeText(ag_bebida.this, "Completar todos los campos", Toast.LENGTH_LONG).show();
         }
-        Base.close();
-        NomBebida.setText("");
-        DesBebida.setText("");
-        CantBebida.setText("");
-        PreBebida.setText("");
-        imagen.setImageResource(0);
     }
 //----------------------------------------
 //METODO REGRESAR PANTALLA ANTERIOR

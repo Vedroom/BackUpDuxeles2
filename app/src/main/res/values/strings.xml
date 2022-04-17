@@ -19,5 +19,10 @@
     <string name="btnRegresar">Regresar</string>
     <string name="btnInicio">Inicio</string>
     <string name="imgBebida">Imagen Bebida</string>
-
+    <string name="btnMod">Modificar</string>
+    <!--- Pantalla ag_ing-->
+    <string name="tIng">Nombre del Ingrediente</string>
+    <string name="txtNomIng">Ingrese Nombre</string>
+    <string name="txtCantIng">Ingrese Cantidad</string>
+    <string name="txtPreIng">Ingrese Cantidad</string>
 </resources>
