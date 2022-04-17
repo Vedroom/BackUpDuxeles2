@@ -72,16 +72,16 @@ public class ag_bebida extends AppCompatActivity {
         String descripcionB = DesBebida.getText().toString();
         String cantidadB = CantBebida.getText().toString();
         String precioB = PreBebida.getText().toString();
+        if (!nombreB.isEmpty() && !descripcionB.isEmpty() && !cantidadB.isEmpty() && !precioB.isEmpty()&& imagen.getDrawable()!=null) {
+        //GUARDAR IMG
+            Bitmap bitmap = ((BitmapDrawable) this.imagen.getDrawable()).getBitmap();
+            Bitmap imagenScaled = Bitmap.createScaledBitmap(bitmap, 960, 960, false);
+            ByteArrayOutputStream baos = new ByteArrayOutputStream(20480);
+            //bitmap.compress(Bitmap.CompressFormat.PNG, 0 , baos);
+            imagenScaled.compress(Bitmap.CompressFormat.JPEG, 90, baos);
+            byte[] img = baos.toByteArray();
+        //--------------------------
 
-    //GUARDAR IMG
-        Bitmap bitmap = ((BitmapDrawable) this.imagen.getDrawable()).getBitmap();
-        Bitmap imagenScaled = Bitmap.createScaledBitmap(bitmap, 960, 960, false);
-        ByteArrayOutputStream baos = new ByteArrayOutputStream(20480);
-        //bitmap.compress(Bitmap.CompressFormat.PNG, 0 , baos);
-        imagenScaled.compress(Bitmap.CompressFormat.JPEG, 90, baos);
-        byte[] img = baos.toByteArray();
-    //--------------------------
-        if (!nombreB.isEmpty() && !descripcionB.isEmpty() && !cantidadB.isEmpty() && !precioB.isEmpty()) {
             ContentValues registro = new ContentValues();
             registro.put("nombreB", nombreB);
             registro.put("cantidadB", cantidadB);

@@ -20,7 +20,8 @@ public class bebidas extends AppCompatActivity {
         //ENCARGADO DE ESTA PANTALLA
         // PASAR COMO VALUE, EL ID CORRESPONDIENTE A LA BEBIDA SELECCIONADA
         //NOTA: VALOR ACTUAL USADO PARA PRUEBA, MODIFICARLO
-        i.putExtra("id","1");
+        int id = 1;
+        i.putExtra("id_modificar", id);
         startActivity(i);
     }
     public void Agregar(View view){
