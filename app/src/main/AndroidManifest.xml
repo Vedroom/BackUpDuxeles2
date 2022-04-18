@@ -13,7 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".pingredientes.mod_ing"></activity>
+        <activity android:name=".pplatillos.popup_agregar_ing"
+            android:theme="@style/AppTheme.TemaPopup"></activity>
+        <activity android:name=".pplatillos.platillo" />
+        <activity android:name=".pplatillos.ag_platillo" />
+        <activity android:name=".pingredientes.mod_ing" />
         <activity
             android:name=".pingredientes.ag_ing"
             android:screenOrientation="portrait" />

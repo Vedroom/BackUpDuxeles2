@@ -8,7 +8,7 @@
     tools:context=".pingredientes.ingrediente">
 
     <ImageButton
-        android:id="@+id/btnAgregarB"
+        android:id="@+id/btnAgregarP"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginEnd="16dp"
@@ -17,12 +17,12 @@
         android:background="#FFEB3B"
         android:contentDescription="@string/btnAgregarB"
         android:onClick="Agregar"
-        app:layout_constraintBottom_toTopOf="@+id/btnModB"
+        app:layout_constraintBottom_toTopOf="@+id/btnModP"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/agregar" />
 
     <ImageButton
-        android:id="@+id/btnModB"
+        android:id="@+id/btnModP"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginEnd="16dp"
@@ -31,12 +31,12 @@
         android:background="#FFEB3B"
         android:contentDescription="@string/btnModB"
         android:onClick="Modificar"
-        app:layout_constraintBottom_toTopOf="@+id/btnElimB"
+        app:layout_constraintBottom_toTopOf="@+id/btnElimP"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/editar" />
 
     <ImageButton
-        android:id="@+id/btnElimB"
+        android:id="@+id/btnElimP"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginEnd="16dp"

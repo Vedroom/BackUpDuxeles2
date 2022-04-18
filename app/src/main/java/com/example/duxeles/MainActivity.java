@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.example.duxeles.pbebidas.bebidas;
 import com.example.duxeles.pingredientes.ingrediente;
+import com.example.duxeles.pplatillos.platillo;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,6 +24,11 @@ public class MainActivity extends AppCompatActivity {
     }
     public void ingredientes (View view){
         Intent i = new Intent(this, ingrediente.class);
+        startActivity(i);
+    }
+
+    public void platillos (View view){
+        Intent i = new Intent(this, platillo.class);
         startActivity(i);
     }
     //-------------------------

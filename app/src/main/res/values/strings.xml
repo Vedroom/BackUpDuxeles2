@@ -25,4 +25,17 @@
     <string name="txtNomIng">Ingrese Nombre</string>
     <string name="txtCantIng">Ingrese Cantidad</string>
     <string name="txtPreIng">Ingrese Cantidad</string>
+    <string name="fondo">Fondo</string>
+    <string name="mas">+</string>
+    <!--- Pantalla platillos-->
+    <string name="tNomPlat">Nombre de Platillo</string>
+    <string name="txtNomPlat">Ingrese Nombre</string>
+    <string name="txtPrePlat">Ingrese Precio</string>
+    <string name="imgPlat">Imagen de Platillo</string>
+    <string name="tIngPlat">Ingredientes</string>
+    <string name="tDesPlat">Descripcion</string>
+    <string name="txtDesPlat">Ingrese Descripcion</string>
+    <string name="txtnewing">Ingrese Ingrediente</string>
+    <string name="btnagIng">Agregar</string>
+    <string name="menos">-</string>
 </resources>

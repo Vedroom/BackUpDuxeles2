@@ -5,34 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
-    tools:context=".pbebidas.bebidas">
-
-    <ImageButton
-        android:id="@+id/BtnElimB"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="#FFEB3B"
-        android:contentDescription="@string/btnElimB"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/eliminar" />
-
-    <ImageButton
-        android:id="@+id/btnModP"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="#FFEB3B"
-        android:contentDescription="@string/btnModB"
-        android:onClick="Modificar"
-        app:layout_constraintBottom_toTopOf="@+id/BtnElimB"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/editar" />
+    tools:context=".pplatillos.platillo">
 
     <ImageButton
         android:id="@+id/btnAgregarP"
@@ -47,4 +20,31 @@
         app:layout_constraintBottom_toTopOf="@+id/btnModP"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/agregar" />
+
+    <ImageButton
+        android:id="@+id/btnModP"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#FFEB3B"
+        android:contentDescription="@string/btnModB"
+        android:onClick="Modificar"
+        app:layout_constraintBottom_toTopOf="@+id/btnElimP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/editar" />
+
+    <ImageButton
+        android:id="@+id/btnElimP"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#FFEB3B"
+        android:contentDescription="@string/btnElimB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/eliminar" />
 </androidx.constraintlayout.widget.ConstraintLayout>
