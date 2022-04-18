@@ -57,14 +57,28 @@ public class ag_ing extends AppCompatActivity {
                 CantIng.setText("");
                 PreIng.setText("");
             }
-
-
         } else {
             Toast.makeText(ag_ing.this, "Completar todos los campos", Toast.LENGTH_LONG).show();
         }
     }
-    public void regresar(View view) {
-        Intent i = new Intent(this, ingrediente.class);
-        startActivity(i);
+
+//METODO REGRESAR PANTALLA PRINCIPAL
+    public void home(View view) {
+
     }
+//---------------------------------------------------------------------------------------
+
+//METODO REGRESAR PANTALLA ANTERIOR
+    public void cancelar(View view) {
+        NomIng.setText("");
+        CantIng.setText("");
+        PreIng.setText("");
+    }
+//------------------------------------------------------------------------------------------
+
+//METODO REGRESAR PANTALLA ANTERIOR
+    public void regresar(View view) {
+        finish();
+    }
+//---------------------------------------
 }

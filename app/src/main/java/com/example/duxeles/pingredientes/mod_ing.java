@@ -72,8 +72,23 @@ public class mod_ing extends AppCompatActivity {
         }
     }
 
-    public void regresar(View view) {
-        Intent i = new Intent(this, ingrediente.class);
-        startActivity(i);
+//METODO REGRESAR PANTALLA PRINCIPAL
+    public void home(View view) {
+
     }
+//---------------------------------------------------------------------------------------
+
+//METODO REGRESAR PANTALLA ANTERIOR
+    public void cancelar(View view) {
+        NomIng.setText("");
+        CantIng.setText("");
+        PreIng.setText("");
+    }
+    //------------------------------------------------------------------------------------------
+
+//METODO REGRESAR PANTALLA ANTERIOR
+    public void regresar(View view) {
+        finish();
+    }
+//---------------------------------------
 }

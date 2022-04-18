@@ -20,7 +20,7 @@ public class platillo extends AppCompatActivity {
     }
 
     public void Modificar (View view){
-        Intent i = new Intent(platillo.this, /*mod_platillo.class*/ag_platillo.class);
+        Intent i = new Intent(platillo.this,mod_platillo.class);
         //ENCARGADO DE ESTA PANTALLA
         // PASAR COMO VALUE, EL ID CORRESPONDIENTE A LA BEBIDA SELECCIONADA
         //NOTA: VALOR ACTUAL USADO PARA PRUEBA, MODIFICARLO

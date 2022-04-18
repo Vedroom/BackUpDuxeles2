@@ -78,7 +78,6 @@ public class ag_bebida extends AppCompatActivity {
             imagenScaled.compress(Bitmap.CompressFormat.JPEG, 90, baos);
             byte[] img = baos.toByteArray();
         //--------------------------
-
             ContentValues registro = new ContentValues();
             registro.put("nombreB", nombreB);
             registro.put("cantidadB", cantidadB);
@@ -98,10 +97,26 @@ public class ag_bebida extends AppCompatActivity {
         }
     }
 //----------------------------------------
+
+//METODO REGRESAR PANTALLA PRINCIPAL
+    public void home(View view) {
+
+    }
+//---------------------------------------------------------------------------------------
+
+//METODO REGRESAR PANTALLA ANTERIOR
+    public void cancelar(View view) {
+        NomBebida.setText("");
+        DesBebida.setText("");
+        CantBebida.setText("");
+        PreBebida.setText("");
+        imagen.setImageResource(0);
+    }
+//------------------------------------------------------------------------------------------
+
 //METODO REGRESAR PANTALLA ANTERIOR
     public void regresar(View view) {
-        Intent i = new Intent(this, bebidas.class);
-        startActivity(i);
+        finish();
     }
 //---------------------------------------
 }

@@ -112,16 +112,33 @@ public class mod_bebida extends AppCompatActivity {
     } else{
         Toast.makeText(mod_bebida.this, "Completar todos los campos", Toast.LENGTH_LONG).show();
     }
-        Base.close();
+    Base.close();
+    NomBebida.setText("");
+    DesBebida.setText("");
+    CantBebida.setText("");
+    PreBebida.setText("");
+    imagen.setImageResource(0);
+}
+
+//METODO REGRESAR PANTALLA PRINCIPAL
+    public void home(View view) {
+
+    }
+//---------------------------------------------------------------------------------------
+
+//METODO REGRESAR PANTALLA ANTERIOR
+    public void cancelar(View view) {
         NomBebida.setText("");
         DesBebida.setText("");
         CantBebida.setText("");
         PreBebida.setText("");
         imagen.setImageResource(0);
     }
-    //METODO REGRESAR PANTALLA ANTERIOR
+//------------------------------------------------------------------------------------------
+
+//METODO REGRESAR PANTALLA ANTERIOR
     public void regresar(View view) {
-        Intent i = new Intent(this, bebidas.class);
-        startActivity(i);
+        finish();
     }
+//---------------------------------------
 }

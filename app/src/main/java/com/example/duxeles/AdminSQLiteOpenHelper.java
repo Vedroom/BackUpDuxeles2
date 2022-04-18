@@ -10,6 +10,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     private static final String db_nombre = "duxeles.db";
     public static final String t_bebidas = "bebidas";
     public static final String t_ing = "ingrediente";
+    public static final String t_platillo = "platillo";
 
 
     public AdminSQLiteOpenHelper(@Nullable Context context) {
@@ -31,13 +32,21 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
                 "nombreI TEXT not null," +
                 "cantidadI INT not null," +
                 "precioI DOUBLE not null)");
+
+        BD.execSQL("CREATE TABLE "+t_platillo+"("+
+                "id_plat INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "nombreP TEXT not null," +
+                "descripcionP TEXT not null," +
+                "precioP DOUBLE not null," +
+                "imgP BLOB not null," +
+                "ingreP TEXT not null)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase BD, int i, int i1) {
         BD.execSQL("DROP TABLE "+t_bebidas);
         BD.execSQL("DROP TABLE "+t_ing);
-
+        BD.execSQL("DROP TABLE "+t_platillo);
         onCreate(BD);
 
     }
