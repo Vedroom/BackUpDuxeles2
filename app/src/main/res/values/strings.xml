@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Duxeles</string>
+    <string name="cancelarEliminacion">Cancelar</string>
+    <string name="aceptarEliminacion">Aceptar</string>
+
 
     <!--- Pantalla bebida-->
     <string name="btnAgregarB">Agregar</string>

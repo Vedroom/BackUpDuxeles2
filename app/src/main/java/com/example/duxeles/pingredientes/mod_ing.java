@@ -68,6 +68,7 @@ public class mod_ing extends AppCompatActivity {
                 NomIng.setText("");
                 CantIng.setText("");
                 PreIng.setText("");
+                finish();
             }
         }
     }

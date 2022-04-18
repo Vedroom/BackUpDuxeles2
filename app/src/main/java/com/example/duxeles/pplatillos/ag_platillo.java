@@ -148,7 +148,8 @@ public class ag_platillo extends AppCompatActivity {
         //------------------
         if (!nombreP.isEmpty() && !descripcionP.isEmpty() && !precioP.isEmpty() && ingredientesP.size() != 0 && imgPlat.getDrawable() != null) {
             //GUARDAR IMG
-            Bitmap imagenScaled = Bitmap.createScaledBitmap(bitImgP, 960, 960, false);
+            Bitmap bitmap = ((BitmapDrawable) this.imgPlat.getDrawable()).getBitmap();
+            Bitmap imagenScaled = Bitmap.createScaledBitmap(bitmap, 960, 960, false);
             ByteArrayOutputStream baos = new ByteArrayOutputStream(20480);
             imagenScaled.compress(Bitmap.CompressFormat.JPEG, 90, baos);
             byte[] imgP = baos.toByteArray();

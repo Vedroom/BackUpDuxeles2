@@ -118,6 +118,7 @@ public class mod_bebida extends AppCompatActivity {
     CantBebida.setText("");
     PreBebida.setText("");
     imagen.setImageResource(0);
+    finish();
 }
 
 //METODO REGRESAR PANTALLA PRINCIPAL
