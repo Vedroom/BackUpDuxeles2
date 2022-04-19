@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#030000"
+    tools:context=".pcuentatotal.cuentatotal">
+
+    <TableLayout
+        android:layout_width="366dp"
+        android:layout_height="550dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="23dp"
+        android:background="#FFFFFF"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="31dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textCant"
+                    android:layout_width="89dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#FFAC07"
+                    android:editable="false"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="Núm"
+                    android:textColor="#FFFFFF"
+                    android:textColorLink="#FFFFFF"
+                    android:textSize="18sp"
+                    android:typeface="monospace"
+                    android:verticalScrollbarPosition="defaultPosition"
+                    app:fontFamily="monospace" />
+
+                <TextView
+                    android:id="@+id/textNomPla"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#FFAC07"
+                    android:editable="false"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="Nombre Platillo"
+                    android:textColor="#FFFFFF"
+                    android:textColorLink="#FFFFFF"
+                    android:textSize="18sp"
+                    android:typeface="monospace"
+                    android:verticalScrollbarPosition="defaultPosition"
+                    app:fontFamily="monospace" />
+
+                <TextView
+                    android:id="@+id/textPunit"
+                    android:layout_width="97dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#FFAC07"
+                    android:editable="false"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="Precio Unitario"
+                    android:textColor="#FFFFFF"
+                    android:textColorLink="#FFFFFF"
+                    android:textSize="18sp"
+                    android:typeface="monospace"
+                    android:verticalScrollbarPosition="defaultPosition"
+                    app:fontFamily="monospace" />
+
+                <TextView
+                    android:id="@+id/textSt"
+                    android:layout_width="89dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#FFAC07"
+                    android:editable="false"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="Subtotal"
+                    android:textColor="#FFFFFF"
+                    android:textColorLink="#FFFFFF"
+                    android:textSize="18sp"
+                    android:typeface="monospace"
+                    android:verticalScrollbarPosition="defaultPosition"
+                    app:fontFamily="monospace" />
+
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="13dp" />
+    </TableLayout>
+
+    <Button
+        android:id="@+id/btnpagar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_redondo"
+        android:text="Pagar"
+        tools:layout_editor_absoluteX="214dp"
+        tools:layout_editor_absoluteY="599dp" />
+
+    <Button
+        android:id="@+id/btncancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_redondo"
+        android:text="@string/btnCancelar"
+        tools:layout_editor_absoluteX="155dp"
+        tools:layout_editor_absoluteY="667dp" />
+
+    <Button
+        android:id="@+id/btndividirC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_redondo"
+        android:text="Dividir Cuenta"
+        tools:layout_editor_absoluteX="54dp"
+        tools:layout_editor_absoluteY="599dp" />
+
+    <ImageButton
+        android:id="@+id/btnAgregarP2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/btn_redondo"
+        android:contentDescription="@string/btnAgregarB"
+        android:onClick="Agregar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/agregar"
+        tools:layout_editor_absoluteY="579dp"
+        tools:srcCompat="@drawable/regresar" />
+
+    <ImageButton
+        android:id="@+id/btnAgregarP6"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/btn_redondo"
+        android:contentDescription="@string/btnAgregarB"
+        android:onClick="Agregar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAgregarP2"
+        tools:srcCompat="@drawable/inicio" />
+
+    <ImageButton
+        android:id="@+id/btnAgregarP3"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/btn_redondo"
+        android:contentDescription="@string/btnAgregarB"
+        android:onClick="Agregar"
+        app:layout_constraintBottom_toTopOf="@+id/btnAgregarP2"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:srcCompat="@drawable/eliminar" />
+
+    <ImageButton
+        android:id="@+id/btnAgregar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/btn_redondo"
+        android:contentDescription="@string/btnAgregarB"
+        android:onClick="Agregar"
+        android:src="@drawable/agregar"
+        app:layout_constraintBottom_toTopOf="@+id/btnAgregarP3"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

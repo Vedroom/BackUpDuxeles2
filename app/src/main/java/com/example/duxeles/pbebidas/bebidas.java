@@ -31,6 +31,7 @@ public class bebidas extends AppCompatActivity {
         i.putExtra("id_modificar", id);
         startActivity(i);
     }
+
     public void Agregar(View view){
         Intent a = new Intent(bebidas.this, ag_bebida.class);
         startActivity(a);
