@@ -2,6 +2,8 @@ package com.example.duxeles.pbebidas;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -15,13 +17,60 @@ import com.example.duxeles.R;
 import com.example.duxeles.pingredientes.ingrediente;
 
 public class bebidas extends AppCompatActivity {
-    AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(bebidas.this);
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bebidas);
 
+
+
+    private String nom, precio, desc;
+    private int foto;
+
+    public bebidas() {
     }
+
+    public bebidas(String nom, String precio, String desc, int foto) {
+        this.nom = nom;
+        this.precio = precio;
+        this.desc = desc;
+        this.foto = foto;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public String getPrecio() {
+        return precio;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public int getFoto() {
+        return foto;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setPrecio(String precio) {
+        this.precio = precio;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public void setFoto(int foto) {
+        this.foto = foto;
+    }
+
+    AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(bebidas.this);
+
+
+
+
+
     public void Modificar (View view){
         Intent i = new Intent(bebidas.this, mod_bebida.class);
         //ENCARGADO DE ESTA PANTALLA
