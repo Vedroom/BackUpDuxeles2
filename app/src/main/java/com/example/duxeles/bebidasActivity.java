@@ -44,5 +44,4 @@ public class bebidasActivity extends AppCompatActivity {
         bebida.add(new bebidas("Nombre", "precio", "descripcion", 1)); //se agregan los datos a agregar en la lista
         return bebida;
     }
-
 }
