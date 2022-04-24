@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
         btnMostrarBebidas=(Button)findViewById(R.id.Bebida);
 

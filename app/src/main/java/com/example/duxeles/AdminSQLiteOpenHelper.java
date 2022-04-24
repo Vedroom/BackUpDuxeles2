@@ -1,9 +1,15 @@
 package com.example.duxeles;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+
+import com.example.duxeles.pbebidas.bebidas;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     private static final int db_version = 1;
@@ -49,5 +55,21 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
         BD.execSQL("DROP TABLE "+t_platillo);
         onCreate(BD);
 
+    }
+
+    public List<bebidas> mostrarBebidas(){
+
+        SQLiteDatabase bd = getReadableDatabase();
+        Cursor cursor = bd.rawQuery("SELECT * FROM CURSOS", null);
+        List <bebidas> bebidas = new ArrayList<>();
+
+        if(cursor.moveToFirst()){
+            do{
+                bebidas.add(new bebidas(cursor.getString()), cursor.getString(1), cursor.getString(2));
+            }//do
+            while(cursor.moveToNext());
+        }//if
+
+        return bebidas;
     }
 }

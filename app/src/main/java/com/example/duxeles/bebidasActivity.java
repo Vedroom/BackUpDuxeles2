@@ -33,15 +33,17 @@ public class bebidasActivity extends AppCompatActivity {
         //Definimos la forma de la lista
         recyclerViewBebidas.setLayoutManager(new LinearLayoutManager(this));
 
+        AdminSQLiteOpenHelper SQLiteHelper = new AdminSQLiteOpenHelper(getApplicationContext());
+
         //Asignamos toda la informacion en el recycler view del layout
-        adaptadorBebidas = new RecyclerViewAdaptador(obtenerBebidas());
+        adaptadorBebidas = new RecyclerViewAdaptador(SQLiteHelper.mostrarBebidas());
         recyclerViewBebidas.setAdapter(adaptadorBebidas);
     }
 
-    public List<bebidas> obtenerBebidas() {
+    /*public List<bebidas> obtenerBebidas() {
 
         List<bebidas> bebida = new ArrayList<>();
         bebida.add(new bebidas("Nombre", "precio", "descripcion", 1)); //se agregan los datos a agregar en la lista
         return bebida;
-    }
+    }*/
 }

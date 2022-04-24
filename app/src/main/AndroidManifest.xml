@@ -15,10 +15,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".pcuentatotal.cuentatotal"></activity>
         <activity
-            android:name=".pcuenta.cuenta"
-            android:label="@string/title_activity_cuenta"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".pmenu.menu"
             android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme.NoActionBar" />
