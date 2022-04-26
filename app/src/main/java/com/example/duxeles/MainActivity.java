@@ -22,6 +22,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     Button btnMostrarBebidas;
+    //private RecyclerView recyclerView
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

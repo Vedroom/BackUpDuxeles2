@@ -29,7 +29,7 @@ public class bebidasActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Vinculamos la instancia recycler view con el recycler view del layout
-        recyclerViewBebidas = (RecyclerView) findViewById(R.id.recyclerLista);
+        recyclerViewBebidas=(RecyclerView)findViewById(R.id.recyclerLista);
         //Definimos la forma de la lista
         recyclerViewBebidas.setLayoutManager(new LinearLayoutManager(this));
 
