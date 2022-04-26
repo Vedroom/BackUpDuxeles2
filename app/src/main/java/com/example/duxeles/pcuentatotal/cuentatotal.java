@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.duxeles.R;
+
 public class cuentatotal extends AppCompatActivity {
 
     @Override

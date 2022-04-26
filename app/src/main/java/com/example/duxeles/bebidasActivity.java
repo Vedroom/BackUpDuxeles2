@@ -36,7 +36,7 @@ public class bebidasActivity extends AppCompatActivity {
         AdminSQLiteOpenHelper SQLiteHelper = new AdminSQLiteOpenHelper(getApplicationContext());
 
         //Asignamos toda la informacion en el recycler view del layout
-        adaptadorBebidas = new RecyclerViewAdaptador(SQLiteHelper.mostrarBebidas());
+        //adaptadorBebidas = new RecyclerViewAdaptador(SQLiteHelper.mostrarBebidas());
         recyclerViewBebidas.setAdapter(adaptadorBebidas);
     }
 

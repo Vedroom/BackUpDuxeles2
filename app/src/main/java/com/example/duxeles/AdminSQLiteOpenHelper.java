@@ -57,19 +57,18 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
 
     }
 
-    public List<bebidas> mostrarBebidas(){
+    public /*List<bebidas>*/ void mostrarBebidas(){
 
         SQLiteDatabase bd = getReadableDatabase();
-        Cursor cursor = bd.rawQuery("SELECT * FROM CURSOS", null);
-        List <bebidas> bebidas = new ArrayList<>();
+        Cursor cursor = bd.rawQuery("SELECT * FROM bebidas", null);
 
+        //List <Rowbebida> Listbebida = new ArrayList<>();
         if(cursor.moveToFirst()){
             do{
-                bebidas.add(new bebidas(cursor.getString()), cursor.getString(1), cursor.getString(2));
+           //     Listbebida.add(new Rowbebida(cursor.getString(0),cursor.getString(1), cursor.getString(2)));
             }//do
             while(cursor.moveToNext());
         }//if
-
-        return bebidas;
+        //return Listbebida;
     }
 }

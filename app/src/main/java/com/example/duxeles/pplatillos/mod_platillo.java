@@ -78,7 +78,8 @@ public class mod_platillo extends AppCompatActivity {
             cursor.close();
             Base.close();
         } catch (Exception e) {
-            Toast.makeText(getApplicationContext(), "El platillo no existe", Toast.LENGTH_LONG).show();
+            String ex = e.toString();
+            Toast.makeText(getApplicationContext(), ex+"El platillo no existe", Toast.LENGTH_LONG).show();
         }
     }
 
