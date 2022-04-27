@@ -51,7 +51,7 @@ public class RecyclerViewAdaptador extends RecyclerView.Adapter<RecyclerViewAdap
         holder.nom.setText(bebidasLista.get(position).getNom());
         holder.precio.setText(bebidasLista.get(position).getPrecio());
         holder.desc.setText(bebidasLista.get(position).getDesc());
-        holder.img.setImageResource(bebidasLista.get(position).getFoto()); //foto?
+        holder.img.setImageResource(bebidasLista.get(position).getImg()); //foto?
     }
 
     //Permite determinar al adaptador la cantidad de elementos que se van a procesar

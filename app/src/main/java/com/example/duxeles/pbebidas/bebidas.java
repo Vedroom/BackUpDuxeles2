@@ -21,7 +21,7 @@ public class bebidas extends AppCompatActivity {
 
 
     private String nom, precio, desc;
-    private int foto;
+    private int img;
 
     public bebidas() {
     }
@@ -30,7 +30,7 @@ public class bebidas extends AppCompatActivity {
         this.nom = nom;
         this.precio = precio;
         this.desc = desc;
-        this.foto = foto;
+        this.img = img;
     }
 
     public String getNom() {
@@ -45,8 +45,8 @@ public class bebidas extends AppCompatActivity {
         return desc;
     }
 
-    public int getFoto() {
-        return foto;
+    public int getImg() {
+        return img;
     }
 
     public void setNom(String nom) {
@@ -61,8 +61,8 @@ public class bebidas extends AppCompatActivity {
         this.desc = desc;
     }
 
-    public void setFoto(int foto) {
-        this.foto = foto;
+    public void setImg(int img) {
+        this.img = img;
     }
 
     AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(bebidas.this);

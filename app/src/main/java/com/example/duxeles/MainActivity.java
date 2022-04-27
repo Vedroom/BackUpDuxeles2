@@ -2,22 +2,15 @@ package com.example.duxeles;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.duxeles.pbebidas.RecyclerViewAdaptador;
-import com.example.duxeles.pbebidas.bebidas;
+import com.example.duxeles.pbebidas.bebidasActivity;
 import com.example.duxeles.pingredientes.ingrediente;
 import com.example.duxeles.pplatillos.platillo;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnMostrarBebidas=(Button)findViewById(R.id.Bebida);
+        btnMostrarBebidas=(Button)findViewById(R.id.btnBebida);
 
         btnMostrarBebidas.setOnClickListener(new View.OnClickListener() {
             @Override
