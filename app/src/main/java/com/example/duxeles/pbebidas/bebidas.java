@@ -20,56 +20,45 @@ public class bebidas extends AppCompatActivity {
 
 
 
-    private String nom, precio, desc;
+    private String nom;
+    private String precio;
+    private String desc;
     private int img;
-
-    public bebidas() {
-    }
-
-    public bebidas(String nom, String precio, String desc, int foto) {
-        this.nom = nom;
-        this.precio = precio;
-        this.desc = desc;
-        this.img = img;
-    }
 
     public String getNom() {
         return nom;
-    }
-
-    public String getPrecio() {
-        return precio;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public int getImg() {
-        return img;
     }
 
     public void setNom(String nom) {
         this.nom = nom;
     }
 
+    public String getPrecio() {
+        return precio;
+    }
+
     public void setPrecio(String precio) {
         this.precio = precio;
+    }
+
+    public String getDesc() {
+        return desc;
     }
 
     public void setDesc(String desc) {
         this.desc = desc;
     }
 
+    public int getImg() {
+        return img;
+    }
+
     public void setImg(int img) {
         this.img = img;
     }
 
+
     AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(bebidas.this);
-
-
-
-
 
     public void Modificar (View view){
         Intent i = new Intent(bebidas.this, mod_bebida.class);
@@ -115,4 +104,6 @@ public class bebidas extends AppCompatActivity {
                 })
                 .show();
     }
+
+
 }
