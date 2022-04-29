@@ -27,12 +27,12 @@ public class DbBebidas extends AdminSQLiteOpenHelper {
         bebidas bebida = null;
         Cursor cursorBebida = null;
 
-        cursorBebida = db.rawQuery("SELECT * FROM" + t_bebidas, null);
+        cursorBebida = db.rawQuery("SELECT * FROM " + t_bebidas, null);
 
         if(cursorBebida.moveToFirst()){
             do{
                 bebida = new bebidas();
-                bebida.setNom(cursorBebida.getString(0);
+                bebida.setNom(cursorBebida.getString(0));
                 bebida.setPrecio(cursorBebida.getString(1));
                 bebida.setDesc(cursorBebida.getString(2));
                 bebida.setImg(cursorBebida.getInt(3));

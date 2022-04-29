@@ -2,35 +2,51 @@ package com.example.duxeles;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.duxeles.pbebidas.ListaBebidasAdapter;
+import com.example.duxeles.pbebidas.bebidas;
 import com.example.duxeles.pbebidas.bebidasActivity;
 import com.example.duxeles.pingredientes.ingrediente;
 import com.example.duxeles.pplatillos.platillo;
+import com.example.duxeles.pbebidas.DbBebidas;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnMostrarBebidas;
+    RecyclerView listaBebidas;
+    ArrayList<bebidas> listaArrayBebidas;
     //private RecyclerView recyclerView
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        listaBebidas=findViewById(R.id.recyclerLista);
+        listaBebidas.setLayoutManager(new LinearLayoutManager(this));
 
-        btnMostrarBebidas=(Button)findViewById(R.id.btnBebida);
+        AdminSQLiteOpenHelper dbBebidas = new AdminSQLiteOpenHelper(this);
 
-        btnMostrarBebidas.setOnClickListener(new View.OnClickListener() {
+        listaArrayBebidas = new ArrayList<>();
+
+        ListaBebidasAdapter adapter = new ListaBebidasAdapter(dbBebidas);
+        //Se envia la información estructurada
+        listaBebidas.setAdapter(adapter);
+
+        /*btnMostrarBebidas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent mostrarBebidas = new Intent(getApplicationContext(), bebidasActivity.class);
                 startActivity(mostrarBebidas);
             }
-        });
+        }); */
     }
 
     //BOTON PROVICIONAL

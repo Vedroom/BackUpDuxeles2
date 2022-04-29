@@ -41,7 +41,7 @@ public class bebidasActivity extends AppCompatActivity {
         recyclerViewBebidas.setAdapter(adaptadorBebidas);
     }
 
-    public List<bebidas> obtenerBebidas() {
+   /* public List<bebidas> obtenerBebidas() {
 
         List<bebidas> bebida = new ArrayList<>();
         bebida.add(new bebidas("Nombre1", "precio", "descripcion", R.drawable.platillos)); //se agregan los datos a agregar en la lista
@@ -49,5 +49,5 @@ public class bebidasActivity extends AppCompatActivity {
         bebida.add(new bebidas("Nombre3", "precio", "descripcion", R.drawable.platillos)); //se agregan los datos a agregar en la lista
         bebida.add(new bebidas("Nombre4", "precio", "descripcion", R.drawable.platillos)); //se agregan los datos a agregar en la lista
         return bebida;
-    }
+    } */
 }
