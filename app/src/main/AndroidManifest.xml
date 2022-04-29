@@ -13,6 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".pcuentatotal.cuentatotal"></activity>
         <activity
             android:name=".pmenu.menu"
@@ -47,6 +48,8 @@
         <activity
             android:name=".pbebidas.ag_bebida"
             android:screenOrientation="portrait" />
+
+        <!--
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
@@ -56,6 +59,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        -->
+
+        <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".MainActivity" />
 
         <activity
             android:name=".pbebidas.bebidasActivity"
