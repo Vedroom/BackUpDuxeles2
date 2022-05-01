@@ -4,6 +4,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.*;
+import android.content.Context;
 import androidx.annotation.Nullable;
 
 import com.example.duxeles.pbebidas.bebidas;
@@ -17,6 +18,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     public static final String t_bebidas = "bebidas";
     public static final String t_ing = "ingrediente";
     public static final String t_platillo = "platillo";
+    Context context;
 
 
     public AdminSQLiteOpenHelper(@Nullable Context context) {
@@ -57,21 +59,34 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
 
     }
 
-    //public /*List<bebidas>*/ void mostrarBebidas(){
 
-      //  SQLiteDatabase bd = getReadableDatabase();
-        //Cursor cursor = bd.rawQuery("SELECT * FROM bebidas", null);
+    public ArrayList<bebidas> mostrarBebida(){
 
-        //List <Rowbebida> Listbebida = new ArrayList<>();
-        //if(cursor.moveToFirst()){
-          //  do{
-           //     Listbebida.add(new Rowbebida(cursor.getString(0),cursor.getString(1), cursor.getString(2)));
+        AdminSQLiteOpenHelper dbHelper = new AdminSQLiteOpenHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        ArrayList<bebidas> listaBebida = new ArrayList<>();
+        bebidas bebida = null;
+        Cursor cursorBebida = null;
+
+        cursorBebida = db.rawQuery("SELECT * FROM " + t_bebidas, null);
+
+        if(cursorBebida.moveToFirst()){
+            do{
+                bebida = new bebidas();
+                bebida.setNom(cursorBebida.getString(0));
+                bebida.setPrecio(cursorBebida.getString(1));
+                bebida.setDesc(cursorBebida.getString(2));
+                bebida.setImg(cursorBebida.getInt(3));
+
+                listaBebida.add(bebida); //va llenando una lista con lo que jale de la tabla t_bebidas
+
             }//do
-            //while(cursor.moveToNext());
-        //}//if
-        //return Listbebida;
-    //}
+            while (cursorBebida.moveToNext());
+        }//if
 
-
+        cursorBebida.close();
+        return  listaBebida;
+    }//mostrarBebida
 
 }

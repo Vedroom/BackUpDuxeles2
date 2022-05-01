@@ -11,11 +11,12 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.duxeles.pbebidas.ListaBebidasAdapter;
+
 import com.example.duxeles.pbebidas.bebidas;
 import com.example.duxeles.pbebidas.bebidasActivity;
 import com.example.duxeles.pingredientes.ingrediente;
 import com.example.duxeles.pplatillos.platillo;
-import com.example.duxeles.pbebidas.DbBebidas;
+
 
 import java.util.ArrayList;
 
@@ -32,21 +33,15 @@ public class MainActivity extends AppCompatActivity {
         listaBebidas=findViewById(R.id.recyclerLista);
         listaBebidas.setLayoutManager(new LinearLayoutManager(this));
 
-        AdminSQLiteOpenHelper dbBebidas = new AdminSQLiteOpenHelper(this);
+        AdminSQLiteOpenHelper dbBebidas = new AdminSQLiteOpenHelper(MainActivity.this);
 
         listaArrayBebidas = new ArrayList<>();
 
-        ListaBebidasAdapter adapter = new ListaBebidasAdapter(dbBebidas);
+        ListaBebidasAdapter adapter = new ListaBebidasAdapter(dbBebidas.mostrarBebida());
         //Se envia la información estructurada
         listaBebidas.setAdapter(adapter);
 
-        /*btnMostrarBebidas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent mostrarBebidas = new Intent(getApplicationContext(), bebidasActivity.class);
-                startActivity(mostrarBebidas);
-            }
-        }); */
+
     }
 
     //BOTON PROVICIONAL

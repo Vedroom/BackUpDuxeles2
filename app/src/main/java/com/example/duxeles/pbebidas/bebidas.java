@@ -18,8 +18,6 @@ import com.example.duxeles.pingredientes.ingrediente;
 
 public class bebidas extends AppCompatActivity {
 
-
-
     private String nom;
     private String precio;
     private String desc;

@@ -1,4 +1,4 @@
-package com.example.duxeles.pbebidas;
+/*package com.example.duxeles.pbebidas;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -13,7 +13,7 @@ public class DbBebidas extends AdminSQLiteOpenHelper {
 
     Context context;
 
-    public DbBebidas(@Nullable Context context){
+    public DbBebidas2(@Nullable Context context){
         super(context);
         this.context = context;
     }
@@ -37,7 +37,7 @@ public class DbBebidas extends AdminSQLiteOpenHelper {
                 bebida.setDesc(cursorBebida.getString(2));
                 bebida.setImg(cursorBebida.getInt(3));
 
-                listaBebida.add(bebida); //va llenando lo que jale de la tabla t_bebidas
+                listaBebida.add(bebida); //va llenando una lista con lo que jale de la tabla t_bebidas
 
             }//do
             while (cursorBebida.moveToNext());
@@ -48,3 +48,5 @@ public class DbBebidas extends AdminSQLiteOpenHelper {
     }//mostrarBebida
 
 }//DbBebidas
+
+*/
